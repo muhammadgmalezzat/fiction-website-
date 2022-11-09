@@ -225,6 +225,11 @@ background-color: var(--main-color);
   font-size: 65px;
   margin-bottom: 0px;
 }
+@media(max-width: 576px){
+.landing-page .header-area .container .row h1 {
+  font-size: 35px;
+}
+}
 /* header */
 
 /* <!-- case-study --> */
@@ -243,11 +248,13 @@ background-color: var(--main-color);
 .case_study .container-fluid .container .row {
   padding-top: 60px;
   padding-bottom: 80px;
+
 }
 .case_study .container-fluid .container .row .content h4 {
   color: var(--main-color);
   font-weight: bold;
   margin-bottom: 30px;
+  margin-top: 30px;
 }
 .case_study .container-fluid .container .row .content p {
   font-size: 16px;
@@ -321,11 +328,7 @@ background-color: var(--main-color);
   background-color: var(--main-txtbackground);
   border-radius: 50%;
   line-height: 140px;
-  top: -70px; /* transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -webkit-transition: all 0.3s ease;
-  -ms-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease; */
+  top: -70px; 
 }
 .our-services
   .container
@@ -751,6 +754,26 @@ background-color: var(--main-color);
   width: calc(50% - 55px);
   margin-bottom: 50px;
   position: relative;
+}
+/*responsive*/
+
+@media(max-width: 792px){
+.time_line_section .time_line_content .left,
+.time_line_section .time_line_content .right {
+  width: calc(100% - 90px);
+  margin-bottom: 50px;
+  position: relative;
+}
+
+}
+@media(max-width: 567px){
+.time_line_section .time_line_content .left .left_content p,
+.time_line_section .time_line_content .right .right_content p {
+  color: var(--main-p);
+  line-height: 1.7;
+  text-align: center;
+  font-size: 12px;
+}
 }
 .time_line_section .time_line_content .left {
   float: left;

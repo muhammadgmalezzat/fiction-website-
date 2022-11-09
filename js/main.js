@@ -2,7 +2,7 @@
 let mainColors = localStorage.getItem("color-option");
 if (mainColors !== null)
     {
-       document.documentElement.style.setProperty('--main-color', localStorage.getItem("color-option"));
+        document.documentElement.style.setProperty('--main-color', localStorage.getItem("color-option"));
         document.querySelectorAll(".colors-list li").forEach(element =>
             {
                 element.classList.remove("active");
@@ -14,9 +14,6 @@ if (mainColors !== null)
                     }
             });
     }
-
-//console.log(window.localStorage.getItem("color-option"));
-
 // landingPage
 let landingPage = document.querySelector(".landing-page");
 //background images
@@ -60,15 +57,13 @@ document.querySelector(".the-gear .dark i").onclick = function ()
         for (let i = 0; i < logoServives.length; i++) {
             logoServives[i].style.filter = ' invert(1)';
         }
-         const logoTime =document.querySelectorAll(".time_line_section img");
+        const logoTime =document.querySelectorAll(".time_line_section img");
         for (let i = 0; i < logoTime.length; i++) {
             logoTime[i].style.filter = ' invert(0)';
         }
         
         }
     }
-
-
 //bullets control
 const butons = document.querySelectorAll(".color-option button");
 butons.forEach((button) => {
@@ -79,7 +74,6 @@ butons.forEach((button) => {
         }
         this.classList.add("active");
         const result = this.dataset.value;
-
         if (result == "view")
         {
             document.querySelector(".nav-bullets").classList.remove("hide");
@@ -90,45 +84,27 @@ butons.forEach((button) => {
         }
 })
 })
-
-
 //switch colors
 
 const colorsList = document.querySelectorAll(".colors-list li");
-//console.log(colorsList);
- 
 colorsList.forEach((li) => {
     li.addEventListener("click", (colorElement) => {
-
-        //console.log(colorElement.target.dataset.color);
-        
         //swet color on root
         document.documentElement.style.setProperty('--main-color', colorElement.target.dataset.color);
-
         localStorage.setItem("color-option", colorElement.target.dataset.color);
         // remove active class from list
-
         colorElement.target.parentElement.querySelectorAll(".active").forEach(element => {
             element.classList.remove("active");
         })
         colorElement.target.classList.add("active");
-
     })
-            //console.log(li.dataset.color);
-
 });
-
-
 //porifolio gallery change
 
 const galleryList = document.querySelectorAll(".list");
 let itemBox = document.querySelectorAll(".item");
 
-//console.log(itemBox);
-
 for (var i = 0; i < galleryList.length; i++) {
-   // console.log(galleryList[i]);
-
     galleryList[i].addEventListener("click", function ()
     {
         for (let j = 0; j < galleryList.length; j++)
@@ -139,42 +115,30 @@ for (var i = 0; i < galleryList.length; i++) {
         
         //add active class to selected element
         this.classList.add("active");
-
         //pick data filter 
         let pickedFilter = this.getAttribute("data-filter");
-        console.log(pickedFilter);
-
         for (let k = 0; k < itemBox.length; k++) {
             itemBox[k].classList.add("hide");
-            console.log(itemBox[k].getAttribute("data-item"));
-            
-
             if (itemBox[k].getAttribute("data-item")==pickedFilter || pickedFilter == "All")
             {
-              itemBox[k].classList.remove("hide");
+                itemBox[k].classList.remove("hide");
             }
-            
         }
-
     })
 
 }
-
-
-
 // Select All Bullets
 const allBullets = document.querySelectorAll(".bullet i");
 const allLinks = document.querySelectorAll(".navbar-nav .nav-link");
-//console.log(allBullets);
 function scrollToSection(elements) {
-  elements.forEach(ele => {
+    elements.forEach(ele => {
     ele.addEventListener("click", (e) => {
-      e.preventDefault();
-      document.querySelector(e.target.dataset.section).scrollIntoView({
+        e.preventDefault();
+        document.querySelector(e.target.dataset.section).scrollIntoView({
         behavior: 'smooth'
-      });
+        });
     });
-  });
+    });
 }
 
 scrollToSection(allBullets);
@@ -182,18 +146,5 @@ scrollToSection(allLinks);
 
 
 
-
-
-
-// const serviceBoxs = document.querySelectorAll(".our-services .inner-box");
-// console.log(serviceBoxs);
-
-// for (let i = 0; i < serviceBoxs.length; i++) {
-    
-//     if (serviceBoxs[i].className == "inner-box mh")
-//     {
-//         serviceBoxs[i].parentElement.classList.add("d-none");
-//         }
-// }
 
 
